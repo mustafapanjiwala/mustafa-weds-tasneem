@@ -29,12 +29,18 @@ window.INVITE = {
   // time is 24h "HH:MM". endTime "" shows "onwards".
   // mapUrl "" = the map button searches Google Maps for venue + address. Paste an exact pin link to override.
   functions: [
-    { name: "Meethi Shitabi",       date: "2027-01-06", hijri: "29th Rajab ul Asab 1448 H.",   time: "19:30", endTime: "", venue: "Saifee Mohalla Mawaid",   address: "Ujjain",            mapUrl: "https://maps.app.goo.gl/SQ5HisLJy928eFyWA", note: "" },
-    { name: "Mehendi",              date: "2027-01-09", hijri: "2nd Shaban al Kareem 1448 H.", time: "12:00", endTime: "", venue: "Kadwali Farm House",      address: "Ager Road, Ujjain", mapUrl: "https://maps.app.goo.gl/XX92o6L5hA5jjrEBA", note: "" },
-    { name: "Mama Mosala",          date: "2027-01-09", hijri: "2nd Shaban al Kareem 1448 H.", time: "20:00", endTime: "", venue: "Kadwali Farm House",      address: "Ager Road, Ujjain", mapUrl: "https://maps.app.goo.gl/XX92o6L5hA5jjrEBA", note: "" },
-    { name: "Darees ni Majlis",     date: "2027-01-10", hijri: "3rd Shaban al Kareem 1448 H.", time: "13:30", endTime: "", venue: "Saifee Mohalla Mawaid",   address: "Ujjain",            mapUrl: "https://maps.app.goo.gl/SQ5HisLJy928eFyWA", note: "" },
-    { name: "Sharbat & Procession", date: "2027-01-10", hijri: "3rd Shaban al Kareem 1448 H.", time: "20:00", endTime: "", venue: "Ibrahimi Mohalla Mawaid", address: "Ujjain",            mapUrl: "https://maps.app.goo.gl/CpCEwVLHZ2MqPQQX8", note: "" },
-    { name: "Walima (Lunch)",       date: "2027-01-11", hijri: "4th Shaban ul Kareem 1448 H.", time: "13:30", endTime: "", venue: "Saifee Mohalla Mawaid",   address: "Ujjain",            mapUrl: "https://maps.app.goo.gl/SQ5HisLJy928eFyWA", note: "Insha'Allah" },
+    { name: "Meethi Shitabi",       date: "2027-01-06", hijri: "29th Rajab ul Asab 1448 H.",   time: "19:30", endTime: "", venue: "Saifee Mohalla Mawaid",   address: "Ujjain",            mapUrl: "https://maps.app.goo.gl/SQ5HisLJy928eFyWA", note: "" ,
+      ar: { name: "ميتهي شتابي", venue: "موائد المحلة السيفية", address: "أجين", hijri: "29 رجب الأصب 1448 هـ", note: "" } },
+    { name: "Mehendi",              date: "2027-01-09", hijri: "2nd Shaban al Kareem 1448 H.", time: "12:00", endTime: "", venue: "Kadwali Farm House",      address: "Ager Road, Ujjain", mapUrl: "https://maps.app.goo.gl/XX92o6L5hA5jjrEBA", note: "" ,
+      ar: { name: "مهندي", venue: "مزرعة كدوالي", address: "طريق أغر، أجين", hijri: "2 شعبان الكريم 1448 هـ", note: "" } },
+    { name: "Mama Mosala",          date: "2027-01-09", hijri: "2nd Shaban al Kareem 1448 H.", time: "20:00", endTime: "", venue: "Kadwali Farm House",      address: "Ager Road, Ujjain", mapUrl: "https://maps.app.goo.gl/XX92o6L5hA5jjrEBA", note: "" ,
+      ar: { name: "ماما موسالا", venue: "مزرعة كدوالي", address: "طريق أغر، أجين", hijri: "2 شعبان الكريم 1448 هـ", note: "" } },
+    { name: "Darees ni Majlis",     date: "2027-01-10", hijri: "3rd Shaban al Kareem 1448 H.", time: "13:30", endTime: "", venue: "Saifee Mohalla Mawaid",   address: "Ujjain",            mapUrl: "https://maps.app.goo.gl/SQ5HisLJy928eFyWA", note: "" ,
+      ar: { name: "مجلس الدريس", venue: "موائد المحلة السيفية", address: "أجين", hijri: "3 شعبان الكريم 1448 هـ", note: "" } },
+    { name: "Sharbat & Procession", date: "2027-01-10", hijri: "3rd Shaban al Kareem 1448 H.", time: "20:00", endTime: "", venue: "Ibrahimi Mohalla Mawaid", address: "Ujjain",            mapUrl: "https://maps.app.goo.gl/CpCEwVLHZ2MqPQQX8", note: "" ,
+      ar: { name: "الشربت والموكب", venue: "موائد المحلة الإبراهيمية", address: "أجين", hijri: "3 شعبان الكريم 1448 هـ", note: "" } },
+    { name: "Walima (Lunch)",       date: "2027-01-11", hijri: "4th Shaban ul Kareem 1448 H.", time: "13:30", endTime: "", venue: "Saifee Mohalla Mawaid",   address: "Ujjain",            mapUrl: "https://maps.app.goo.gl/SQ5HisLJy928eFyWA", note: "Insha'Allah" ,
+      ar: { name: "الوليمة (غداء)", venue: "موائد المحلة السيفية", address: "أجين", hijri: "4 شعبان الكريم 1448 هـ", note: "إن شاء الله" } },
   ],
 
   awaiting: [
@@ -44,6 +50,31 @@ window.INVITE = {
     "Panjiwala & Kagzi Families",
     "Relatives & Friends",
   ],
+
+  // Arabic version (shown when the guest taps the "ع" toggle). Same keys as above.
+  ar: {
+    groom: { name: "مصطفى",    parents: "ابن ملا مرتضى بهائي والسيدة راضية بنجي والا" },
+    bride: { name: "د. تسنيم", parents: "ابنة السيد حبيب بهائي والسيدة راضية عطار" },
+    blessing: [
+      "بفضل الله سبحانه، وبوسيلة الخمسة الأطهار (عليهم السلام)،",
+      "وببركات سيدنا الدكتور محمد برهان الدين (رضوان الله عليه)،",
+      "وبالدعاء المبارك لسيدنا الدكتور عالي قدر مفضل سيف الدين (طول الله عمره الشريف)",
+    ],
+    host: "الشيخ غلام حسين بنجي والا",
+    hostSub: "(المرحومة كلثوم باي بنجي والا)",
+    inviteLine: "يدعوكم للاحتفال بزفاف حفيده، وحضوركم يزيد المناسبة بهجةً وذكرى.",
+    nikahLine: "تمّ عقد النكاح على اليد المباركة لآقا مولى (طول الله عمره الشريف)",
+    coverLine: "عائلتا بنجي والا وكاغزي",
+    city: "أجين، الهند",
+    awaiting: [
+      "ملا مرتضى والسيدة راضية بنجي والا",
+      "السيد إسماعيل والسيدة فاطمة بنجي والا",
+      "السيد عباس والسيدة نفيسة كاغزي",
+      "عائلتا بنجي والا وكاغزي",
+      "الأهل والأصدقاء",
+    ],
+    rsvpContact: "عائلة بنجي والا",
+  },
 
   rsvp: {
     whatsapp: "917693953153",

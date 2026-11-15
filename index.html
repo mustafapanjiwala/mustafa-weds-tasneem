@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#5c1220">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="locked">
@@ -36,80 +36,90 @@
 <svg class="flora side-flora l flip" aria-hidden="true"><use href="#lily"/></svg><svg class="flora side-flora r" aria-hidden="true"><use href="#lily"/></svg>
 
 <!-- ============ COVER (two doors that open) ============ -->
+<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ar">ع</button></div>
+
 <div id="cover" aria-label="Invitation cover">
   <div class="door door-l"></div>
   <div class="door door-r"></div>
   <svg class="flora l flip" aria-hidden="true"><use href="#lily"/></svg><svg class="flora r" aria-hidden="true"><use href="#lily"/></svg><svg class="flora t" aria-hidden="true"><use href="#lily"/></svg><svg class="flora t2" aria-hidden="true"><use href="#lily"/></svg>
   <div class="cover-inner">
-    <p class="eyebrow">The Wedding Of</p>
+    <p class="eyebrow" data-t="weddingOf"></p>
     <div class="monogram" data-monogram></div>
     <h1 class="script cover-names"><span data-groom></span><em>&amp;</em><span data-bride></span></h1>
     <p class="cover-date" data-maindate></p>
-    <button id="openBtn" type="button">Open Invitation</button>
+    <button id="openBtn" type="button" data-t="open"></button>
     <p class="cover-sub" data-coverline></p>
   </div>
 </div>
 
 <main id="invite">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero"><svg class="flora a" aria-hidden="true"><use href="#lily"/></svg><svg class="flora b flip" aria-hidden="true"><use href="#lily"/></svg>
-    <div class="arch">
+  <!-- ============ NAMES SCREEN ============ -->
+  <section class="intro"><svg class="flora a" aria-hidden="true"><use href="#lily"/></svg><svg class="flora b flip" aria-hidden="true"><use href="#lily"/></svg><svg class="flora c" aria-hidden="true"><use href="#lily"/></svg><svg class="flora d flip" aria-hidden="true"><use href="#lily"/></svg>
+    <p class="eyebrow" data-t="weddingOf"></p>
+    <svg class="sprig-div" aria-hidden="true"><use href="#sprig"/></svg>
+    <h2 class="script intro-names"><span data-groom></span><em>&amp;</em><span data-bride></span></h2>
+    <svg class="sprig-div" aria-hidden="true"><use href="#sprig"/></svg>
+    <p class="cover-date" data-maindate></p>
+    <p class="city" data-city></p>
+    <p class="scroll-hint"><span data-t="scroll"></span><br><b>&#8964;</b></p>
+  </section>
+
+  <!-- ============ INVITATION CARD (rises on scroll) ============ -->
+  <section class="hero">
+    <div class="arch" id="riseCard">
+      <div class="monogram small" data-monogram></div>
       <p class="bismillah" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-            <p class="blessing" data-blessing></p>
+      <p class="blessing" data-blessing></p>
       <div class="divider"><span></span><i>&#10022;</i><span></span></div>
       <p class="hosts" data-host></p>
       <p class="hosts-sub" data-hostsub></p>
       <p class="invite-line" data-inviteline></p>
       <h2 class="script big-name" data-groom></h2>
       <p class="parents" data-groom-parents></p>
-      <p class="with script">Weds</p>
+      <p class="with script" data-t="weds"></p>
       <h2 class="script big-name" data-bride></h2>
       <p class="parents" data-bride-parents></p>
       <p class="nikah" data-nikah></p>
-      <div class="divider"><span></span><i>&#10022;</i><span></span></div>
-      <p class="cover-date" data-maindate></p>
-      <p class="city" data-city></p>
     </div>
-    <p class="scroll-hint">scroll to unfold<br><span>&#8964;</span></p>
   </section>
 
   <!-- ============ COUNTDOWN ============ -->
   <section class="countdown reveal" id="countdown"><svg class="flora a" aria-hidden="true"><use href="#lily"/></svg><svg class="flora b" aria-hidden="true"><use href="#lily"/></svg>
-    <p class="eyebrow">Counting down</p>
+    <p class="eyebrow" data-t="counting"></p>
     <svg class="sprig-div" aria-hidden="true"><use href="#sprig"/></svg>
-    <h3 class="section-title">to the Walima</h3>
+    <h3 class="section-title" data-t="toWalima"></h3>
     <div class="timer">
-      <div><b id="cd-d">00</b><span>Days</span></div>
-      <div><b id="cd-h">00</b><span>Hours</span></div>
-      <div><b id="cd-m">00</b><span>Minutes</span></div>
-      <div><b id="cd-s">00</b><span>Seconds</span></div>
+      <div><b id="cd-d">00</b><span data-t="days"></span></div>
+      <div><b id="cd-h">00</b><span data-t="hours"></span></div>
+      <div><b id="cd-m">00</b><span data-t="minutes"></span></div>
+      <div><b id="cd-s">00</b><span data-t="seconds"></span></div>
     </div>
   </section>
 
   <!-- ============ FUNCTIONS ============ -->
   <section class="functions" id="functions"><svg class="flora a" aria-hidden="true"><use href="#lily"/></svg><svg class="flora b" aria-hidden="true"><use href="#lily"/></svg>
-    <p class="eyebrow reveal">The Celebrations</p>
+    <p class="eyebrow reveal" data-t="celebrations"></p>
     <svg class="sprig-div" aria-hidden="true"><use href="#sprig"/></svg>
-    <h3 class="section-title reveal">Join us for every occasion</h3>
+    <h3 class="section-title reveal" data-t="joinUs"></h3>
     <div id="days"></div>
   </section>
 
   <!-- ============ RSVP ============ -->
   <section class="rsvp reveal" id="rsvp" hidden><svg class="flora a flip" aria-hidden="true"><use href="#lily"/></svg><svg class="flora b" aria-hidden="true"><use href="#lily"/></svg>
-    <p class="eyebrow">RSVP</p>
+    <p class="eyebrow" data-t="rsvp"></p>
     <svg class="sprig-div" aria-hidden="true"><use href="#sprig"/></svg>
-    <h3 class="section-title">Will you join us?</h3>
+    <h3 class="section-title" data-t="willYou"></h3>
     <p class="rsvp-text" data-rsvp-text></p>
-    <a id="rsvpBtn" class="btn btn-solid" target="_blank" rel="noopener">Confirm on WhatsApp</a>
+    <a id="rsvpBtn" class="btn btn-solid" target="_blank" rel="noopener" data-t="confirm"></a>
   </section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="reveal"><svg class="flora a flip" aria-hidden="true"><use href="#lily"/></svg><svg class="flora b" aria-hidden="true"><use href="#lily"/></svg>
     <div class="monogram small" data-monogram></div>
-    <p class="eyebrow">Awaiting your presence</p>
+    <p class="eyebrow" data-t="awaiting"></p>
     <div class="awaiting" data-awaiting></div>
-    <p class="script foot-names"><span data-groom></span> &amp; <span data-bride></span></p>
+    <p class="script foot-names"><span data-groom></span> <span data-t="amp"></span> <span data-bride></span></p>
     <p class="cover-date" data-maindate></p>
   </footer>
 </main>

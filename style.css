@@ -172,3 +172,46 @@ footer .flora.b{right:-30px;bottom:0;width:140px;height:267px}
 }
 .cover-names em{font-size:.55em;margin:.05em 0 0}
 .blessing,.invite-line,.nikah{text-wrap:balance}
+
+/* ---------- names screen + rising card ---------- */
+.intro{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding-top:70px;padding-bottom:70px}
+.intro-names{font-size:clamp(3.6rem,17vw,6rem);line-height:1;margin:.25em 0 .3em}
+.intro-names span,.intro-names em{display:block}
+.intro-names em{font-style:normal;font-size:.5em;color:var(--gold-soft);margin:.1em 0}
+.intro .sprig-div{width:150px;height:32px}
+.intro .city{margin-bottom:0}
+.intro .scroll-hint{margin-top:48px}
+.scroll-hint b{display:inline-block;font-weight:400;font-size:1.6em;animation:bob 1.8s infinite}
+.intro .flora.a{right:-38px;bottom:-10px;width:150px;height:286px}
+.intro .flora.b{left:-38px;bottom:-10px;width:150px;height:286px}
+.intro .flora.c{right:-30px;top:-34px;width:110px;height:210px;transform:rotate(180deg)}
+.intro .flora.d{left:-30px;top:-34px;width:110px;height:210px;transform:rotate(180deg) scaleX(-1)}
+.hero{min-height:0;display:block;padding-top:30px;padding-bottom:70px}
+.arch{will-change:transform,opacity;transform-origin:50% 100%;box-shadow:0 30px 60px -30px rgba(0,0,0,.45);padding-top:54px}
+.arch .monogram{margin-top:0;margin-bottom:14px;box-shadow:none}
+
+/* ---------- language toggle ---------- */
+.lang{position:fixed;top:14px;right:14px;z-index:60;display:flex;gap:2px;padding:3px;border-radius:30px;direction:ltr;
+  background:var(--paper);border:1px solid var(--gold-soft);box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.lang button{font-family:var(--serif);font-size:13px;letter-spacing:.12em;line-height:1;border:0;background:transparent;color:var(--muted);
+  min-width:40px;height:30px;border-radius:30px;cursor:pointer}
+.lang button[data-lang="ar"]{font-family:var(--arabic);font-size:17px;letter-spacing:0;padding-bottom:4px}
+.lang button.on{background:var(--gold);color:var(--on-gold)}
+
+/* ---------- Arabic (right-to-left) ---------- */
+[dir="rtl"] body{font-family:var(--arabic);font-size:18px;line-height:1.8}
+[dir="rtl"] *{letter-spacing:0!important;text-transform:none!important}
+[dir="rtl"] .script{font-family:"Aref Ruqaa",var(--arabic);line-height:1.5}
+[dir="rtl"] .intro-names{font-size:clamp(3rem,14vw,5rem)}
+[dir="rtl"] .cover-names{font-size:clamp(2.8rem,13vw,4.6rem)}
+[dir="rtl"] .big-name{font-size:clamp(2.6rem,12vw,4.4rem)}
+[dir="rtl"] .fn h4{font-size:clamp(1.9rem,9vw,2.4rem)}
+[dir="rtl"] .eyebrow{font-size:.95em}
+[dir="rtl"] .cover-date,[dir="rtl"] .day-head,[dir="rtl"] .fn .time{font-size:.9em}
+[dir="rtl"] #openBtn,[dir="rtl"] .btn{font-family:var(--arabic);font-size:.85em}
+[dir="rtl"] .fn .actions .btn{font-size:.78em;padding:7px 14px}
+[dir="rtl"] .timer span{font-size:.8em}
+[dir="rtl"] .section-title,[dir="rtl"] .invite-line,[dir="rtl"] .parents,[dir="rtl"] .city,[dir="rtl"] .hijri,[dir="rtl"] .fn .addr,[dir="rtl"] .rsvp-text,[dir="rtl"] .cover-sub{font-style:normal}
+[dir="rtl"] .monogram,[dir="rtl"] .timer b{font-family:var(--serif);direction:ltr}
+[dir="rtl"] .foot-names{font-size:clamp(1.7rem,7.5vw,2.4rem)}
+[dir="rtl"] .fn .note{font-size:.85em}
