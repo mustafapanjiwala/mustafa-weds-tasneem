@@ -36,7 +36,13 @@
 <svg class="flora side-flora l flip" aria-hidden="true"><use href="#lily"/></svg><svg class="flora side-flora r" aria-hidden="true"><use href="#lily"/></svg>
 
 <!-- ============ COVER (two doors that open) ============ -->
-<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ar">ع</button></div>
+<div class="topbar">
+  <button id="musicBtn" class="music" type="button" aria-label="Music on/off" aria-pressed="false" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/><path class="slash" d="M3 3l18 18"/></svg>
+  </button>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ar">ع</button></div>
+</div>
+<audio id="bgm" loop preload="none"></audio>
 
 <div id="cover" aria-label="Invitation cover">
   <div class="door door-l"></div>

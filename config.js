@@ -6,6 +6,8 @@ window.INVITE = {
   groom: { name: "Mustafa",     parents: "S/o Mulla Murtaza Bhai & Mrs. Raziya Panjiwala" },
   bride: { name: "Dr. Tasneem", parents: "D/o Mr. Habib Bhai & Mrs. Raziya Attar" },
   monogram: "M & T",
+  music: "music.mp3",                    // background music file; "" turns music off. Replace the file to use your own track.
+  musicVolume: 0.35,                     // 0 to 1
   theme: "maroon",                       // "ivory" or "maroon"
 
   // Lines under the Bismillah

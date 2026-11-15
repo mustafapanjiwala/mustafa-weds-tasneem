@@ -132,9 +132,31 @@
   }
   tick(); setInterval(tick, 1000);
 
+  /* ---------- background music: starts when the doors open, button turns it off/on ---------- */
+  var bgm = $("#bgm"), mBtn = $("#musicBtn"), wanted = false, fade = null;
+  if (C.music) { bgm.src = C.music; mBtn.hidden = false; }
+  function music(on) {
+    if (!C.music) return;
+    wanted = on; clearInterval(fade);
+    mBtn.classList.toggle("playing", on); mBtn.setAttribute("aria-pressed", on);
+    var max = C.musicVolume || 0.35;
+    if (on) {
+      bgm.volume = 0;
+      var pr = bgm.play();
+      if (pr && pr.catch) pr.catch(function () { wanted = false; mBtn.classList.remove("playing"); });
+      fade = setInterval(function () { bgm.volume = Math.min(max, bgm.volume + max / 20); if (bgm.volume >= max) clearInterval(fade); }, 100);
+    } else { bgm.pause(); }
+  }
+  mBtn.addEventListener("click", function () { music(!wanted); });
+  document.addEventListener("visibilitychange", function () {
+    if (!C.music || !wanted) return;
+    if (document.hidden) bgm.pause(); else bgm.play().catch(function () {});
+  });
+
   /* ---------- open the cover ---------- */
   $("#openBtn").addEventListener("click", function () {
     var c = $("#cover");
+    music(true);
     c.classList.add("open");
     document.body.classList.remove("locked");
     window.scrollTo(0, 0);
