@@ -263,3 +263,8 @@ body{font-size:20px;font-weight:500;line-height:1.6}
 [dir="rtl"] .fn h4{font-family:var(--arabic);font-style:normal;font-weight:700}
 [dir="rtl"] .script{-webkit-text-stroke:0}
 .scroll-hint{font-size:.72em;letter-spacing:.24em}
+.monogram{white-space:nowrap;font-size:26px;letter-spacing:.02em;line-height:1;font-weight:500}
+.monogram.small{font-size:20px}
+.cover-names{font-size:clamp(2.6rem,15vw,5.4rem)}
+.intro-names{font-size:clamp(2.8rem,17vw,6rem)}
+@media (max-width:360px){.cover-date{letter-spacing:.12em;font-size:.84em;white-space:nowrap}}
