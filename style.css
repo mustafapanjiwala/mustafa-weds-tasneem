@@ -1,7 +1,7 @@
 :root{
-  --card:rgba(255,252,244,.72); --on-gold:#fff; --glow:var(--glow); --dot:rgba(168,128,47,.09); --flora:.5;
+  --card:rgba(255,253,247,.88); --on-gold:#fff; --glow:var(--glow); --dot:rgba(168,128,47,.09); --flora:.5;
   --paper:#f8f1e4; --paper-2:#f1e6cf; --sand:#ead9b8;
-  --gold:#a8802f; --gold-soft:#c9a24d; --ink:#4a3b22; --muted:#8a7350;
+  --gold:#7a5a14; --gold-soft:#b8913f; --ink:#2f2412; --muted:#5f4a2a;
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --script:"Pinyon Script","Snell Roundhand","Apple Chancery",cursive;
   --arabic:"Amiri","Geeza Pro","Noto Naskh Arabic",serif;
@@ -227,3 +227,39 @@ footer .flora.b{right:-30px;bottom:0;width:140px;height:267px}
 .music.playing .slash{display:none}
 .music.playing{background:var(--gold);color:var(--on-gold);animation:pulse 2.4s infinite}
 .music:not(.playing){color:var(--muted)}
+
+/* ---------- readability pass: larger, heavier text and stronger contrast ---------- */
+body{font-size:20px;font-weight:500;line-height:1.6}
+.eyebrow{font-size:.8em;letter-spacing:.3em;font-weight:600}
+.section-title{font-size:1.75em;font-weight:500}
+.blessing{font-size:.92em;line-height:1.65;color:var(--ink)}
+.hosts{font-size:1.08em;font-weight:700}
+.hosts-sub{font-size:.88em;font-weight:600}
+.invite-line{font-size:1.02em;color:var(--ink)}
+.parents{font-size:1em;color:var(--ink)}
+.nikah{font-size:.98em;font-weight:700}
+.cover-date{font-size:.9em;letter-spacing:.22em;font-weight:600}
+.city,.cover-sub{font-size:1em}
+.with.script,.cover-names em,.intro-names em{color:var(--gold)}
+.hijri{font-size:.92em}
+.fn h4{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(1.8rem,8vw,2.2rem);line-height:1.2}
+.fn .time{font-size:.9em;letter-spacing:.14em;font-weight:700;margin-top:.45em}
+.fn .venue{font-size:1.12em;font-weight:700}
+.fn .addr{font-size:1em}
+.fn .note{font-size:.72em;font-weight:700}
+.day-head{font-size:.78em;letter-spacing:.16em;font-weight:700;padding:8px 20px}
+#openBtn,.btn-solid{font-size:.82em;font-weight:700;letter-spacing:.2em}
+.fn .actions .btn{font-size:.7em;font-weight:700;letter-spacing:.12em;padding:12px 14px;border-width:1.5px}
+.timer b{font-weight:600}
+.timer span{font-size:.66em;font-weight:700;letter-spacing:.14em}
+.awaiting p{font-size:1.02em}
+.rsvp-text{font-size:1.05em;color:var(--ink)}
+.scroll-hint{font-size:.8em;font-weight:600}
+.script{-webkit-text-stroke:.35px currentColor}
+.bismillah{-webkit-text-stroke:0}
+@media (max-width:420px){body{font-size:18.5px}}
+@media (max-width:520px){.blessing{font-size:.9em}}
+[dir="rtl"] body{font-size:19.5px}
+[dir="rtl"] .fn h4{font-family:var(--arabic);font-style:normal;font-weight:700}
+[dir="rtl"] .script{-webkit-text-stroke:0}
+.scroll-hint{font-size:.72em;letter-spacing:.24em}

@@ -8,7 +8,7 @@ window.INVITE = {
   monogram: "M & T",
   music: "music.mp3",                    // background music file; "" turns music off. Replace the file to use your own track.
   musicVolume: 0.35,                     // 0 to 1
-  theme: "maroon",                       // "ivory" or "maroon"
+  theme: "ivory",                        // "ivory" or "maroon"
 
   // Lines under the Bismillah
   blessing: [
