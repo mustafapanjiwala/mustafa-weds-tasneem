@@ -143,11 +143,25 @@
     if (on) {
       bgm.volume = 0;
       var pr = bgm.play();
-      if (pr && pr.catch) pr.catch(function () { wanted = false; mBtn.classList.remove("playing"); });
+      if (pr && pr.catch) pr.catch(function () { started = false; });
       fade = setInterval(function () { bgm.volume = Math.min(max, bgm.volume + max / 20); if (bgm.volume >= max) clearInterval(fade); }, 100);
     } else { bgm.pause(); }
   }
-  mBtn.addEventListener("click", function () { music(!wanted); });
+  mBtn.addEventListener("click", function (e) { e.stopPropagation(); started = true; music(!wanted); });
+  /* on by default: try to start straight away; phones block sound until the first tap,
+     so if that fails the music starts on the guest's first tap anywhere on the page */
+  var started = false;
+  function firstTap(e) {
+    if (started || (e.target.closest && e.target.closest("#musicBtn"))) return;
+    started = true; music(true);
+  }
+  if (C.music) {
+    wanted = true; mBtn.classList.add("playing"); mBtn.setAttribute("aria-pressed", true);
+    bgm.volume = C.musicVolume || 0.35;
+    var first = bgm.play();
+    if (first && first.then) first.then(function () { started = true; }).catch(function () {});
+    ["pointerdown", "touchend", "click", "keydown"].forEach(function (ev) { document.addEventListener(ev, firstTap, true); });
+  }
   document.addEventListener("visibilitychange", function () {
     if (!C.music || !wanted) return;
     if (document.hidden) bgm.pause(); else bgm.play().catch(function () {});
@@ -156,7 +170,7 @@
   /* ---------- open the cover ---------- */
   $("#openBtn").addEventListener("click", function () {
     var c = $("#cover");
-    music(true);
+    if (!started) { started = true; music(true); }
     c.classList.add("open");
     document.body.classList.remove("locked");
     window.scrollTo(0, 0);
